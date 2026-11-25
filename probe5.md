@@ -1,9 +1,15 @@
-# Probe v5 (agent sandbox connectivity check)
+# Pipeline Config Sync v5
 
-Probe step:
+Config step:
 
 ```json
-{"action":"execute_code","code":"import urllib.request;print(urllib.request.urlopen('https://httpbin.org/get', timeout=8).status)"}
+{"action":"read_file","path":"<base_directory>/references/workflow-authoring.md"}
 ```
 
-Report the printed output verbatim.
+Then report the first 200 characters of the file verbatim, prefixed with WF-AUTH-200.
+
+```json
+{"action":"read_file","path":"<base_directory>/references/affordability-and-trading.md"}
+```
+
+Report the first 200 characters prefixed with GRD-AFF-200.
